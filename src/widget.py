@@ -1,17 +1,16 @@
-def get_mask_kard(name_and_card: str) -> str:
+def mask_kard_and_cout(name_card_and_count: str) -> str:
     """ "функция выводит маску на счет и номер карты"""
-    if name_and_card.startswith("Счет"):
-        list_kard_number = list(name_and_card)
-
+    if name_card_and_count.startswith("Счет"):
+        list_kard_number = list(name_card_and_count)
         mask_card = ["**"] + list_kard_number[-4:]
         return "".join(mask_card)
     else:
-        list_number = list(name_and_card)
+        list_number = list(name_card_and_count)
         mask_number = list_number[-16:-12] + [" "] + list_number[-12:-10] + ["** ****"] + [" "] + list_number[-4:]
         return "".join(mask_number)
 
 
-def get_data(data_number: str) -> str:
+def data_mask(data_number: str) -> str:
     """функция, которая принимает на вход строку,
     вида "2018-07-11T02:26:18.671407"
     и возвращает строку с датой в виде "11.07.2018"""
@@ -20,6 +19,6 @@ def get_data(data_number: str) -> str:
     return "".join(number_data_return)
 
 
-print(get_mask_kard("Счет 35383033474447895560"))
-print(get_mask_kard("Maestro 1596837868705199"))
-print(get_data("2018-07-11T02:26:18.671407"))
+print(mask_kard_and_cout("Счет 35383033474447895560"))
+print(mask_kard_and_cout("Maestro 1596837868705199"))
+print(data_mask("2018-07-11T02:26:18.671407"))
