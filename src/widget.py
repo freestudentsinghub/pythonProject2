@@ -1,13 +1,15 @@
-def mask_kard_and_cout(name_card_and_count: str) -> str:
+from src.masks import mask_card, mask_account
+
+def mask_kard_and_mask_account(name_card_and_name_account: str) -> str:
     """ "функция выводит маску на счет и номер карты"""
-    if name_card_and_count.startswith("Счет"):
-        list_kard_number = list(name_card_and_count)
-        mask_card = ["**"] + list_kard_number[-4:]
-        return "".join(mask_card)
+    if name_card_and_name_account.startswith("Счет"):
+        mask_card_nwe = mask_account(name_card_and_name_account)
+        return "Счет" + " " + "".join(mask_card_nwe)
     else:
-        list_number = list(name_card_and_count)
-        mask_number = list_number[-16:-12] + [" "] + list_number[-12:-10] + ["** ****"] + [" "] + list_number[-4:]
-        return "".join(mask_number)
+        num = "".join([num for num in name_card_and_name_account if num.isdigit()])
+        name = name_card_and_name_account.replace(num, "")
+        mask_number = mask_card(num).strip()
+        return f"{name} {''.join(mask_number)}"
 
 
 def data_mask(data_number: str) -> str:
@@ -15,10 +17,13 @@ def data_mask(data_number: str) -> str:
     вида "2018-07-11T02:26:18.671407"
     и возвращает строку с датой в виде "11.07.2018"""
     list_number = list(data_number)
-    number_data_return = list_number[8:10] + ["."] + list_number[5:7] + ["."] + list_number[0:4]
-    return "".join(number_data_return)
+    number_data = list_number[8:10] + ["."] + list_number[5:7] + ["."] + list_number[0:4]
+    return "".join(number_data)
 
 
-print(mask_kard_and_cout("Счет 35383033474447895560"))
-print(mask_kard_and_cout("Maestro 1596837868705199"))
+print(mask_kard_and_mask_account("Счет 35383033474447895560"))
+print(mask_kard_and_mask_account("Maestro 1596837868705199"))
 print(data_mask("2018-07-11T02:26:18.671407"))
+print(mask_kard_and_mask_account("Visa Platinum 8990922113665229"))
+print(mask_kard_and_mask_account("Visa Gold 5999414228426353"))
+print(mask_kard_and_mask_account("Visa Classic 6831982476737658"))
