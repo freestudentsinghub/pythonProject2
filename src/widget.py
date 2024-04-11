@@ -1,4 +1,5 @@
-from src.masks import mask_card, mask_account
+from src.masks import mask_account, mask_card
+
 
 def mask_kard_and_mask_account(name_card_and_name_account: str) -> str:
     """ "функция выводит маску на счет и номер карты"""

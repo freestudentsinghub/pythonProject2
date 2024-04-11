@@ -12,6 +12,3 @@ def mask_account(card_number: str) -> str:
     list_card_number = list(card_number)
     mask_card = ["**"] + list_card_number[-4:]
     return "".join(mask_card)
-
-
-
