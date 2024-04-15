@@ -2,6 +2,9 @@ from datetime import datetime
 
 
 def filter_by_state(data: list, state: str = "EXECUTED") -> list:
+    """Функция, которая принимает на вход список словарей и значение для ключа state
+    (опциональный параметр со значением по умолчанию
+    EXECUTED) и возвращает новый список, содержащий только те словари, у которых ключ"""
     function_output = []
     for check in data:
         if check.get("state") == state:
@@ -11,6 +14,8 @@ def filter_by_state(data: list, state: str = "EXECUTED") -> list:
 
 
 def sorted_by_datetime(data: list, order: str = "descending") -> list:
+    """Функция, которая принимает на вход список словарей и возвращает новый список,
+     в котором исходные словари отсортированы по убыванию даты (ключ date). """
     sorted_data = sorted(data, key=lambda x: datetime.fromisoformat(x["date"]), reverse=(order == "descending"))
     return sorted_data
 
