@@ -4,12 +4,12 @@ from src import masks, processing, widget
 
 
 def test_masks():
-    """Проверяет функциииз модуля masks"""
+    """Проверяет функции из модуля masks"""
     assert masks.mask_card("7000792289606361") == "7000 79** **** 6361"
     assert masks.mask_account("73654108430135874305") == "**4305"
 
 
-# widget с картами и счетами
+
 @pytest.mark.parametrize(
     "name_card_and_name_account, expected",
     [
@@ -19,6 +19,7 @@ def test_masks():
     ],
 )
 def test_mask_kard_and_mask_account(name_card_and_name_account, expected):
+    """проверяет первую функцию из widget"""
     assert widget.mask_kard_and_mask_account(name_card_and_name_account) == expected
 
 
