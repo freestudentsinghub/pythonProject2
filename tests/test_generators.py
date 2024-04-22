@@ -5,6 +5,24 @@ import pytest
 from src import generators
 
 
+def test_card_number_generator() -> None:
+    """проверяет генератор номеров банковских карт,
+    который должен генерировать номера карт в формате "XXXX XXXX XXXX XXXX",
+    где X — цифра. Должны быть сгенерированы номера карт в заданном диапазоне, например,
+     от 0000 0000 0000 0001 до 9999 9999 9999 9999 (диапазоны передаются как параметры генератора)."""
+    expected_output = [
+        "0000 0000 0000 0001",
+        "0000 0000 0000 0002",
+        "0000 0000 0000 0003",
+        "0000 0000 0000 0004",
+        "0000 0000 0000 0005",
+    ]
+
+    actual_output = list(generators.card_number_generator(1, 5))
+
+    assert actual_output == expected_output
+
+
 @pytest.fixture
 def test_generators() -> List[dict]:
     return [
@@ -57,6 +75,10 @@ def test_generators() -> List[dict]:
 
 
 def test_filter_by_currency(test_generators: List[dict]) -> None:
+    """тест для функции, которая принимает список словарей
+    (или объект, который выдает по одной словари с транзакциями),
+    и возвращает итератор, который выдает по очереди операции,
+    в которых указана заданная валюта."""
     usd_tranzaction = list(generators.filter_by_currency(test_generators, "USD"))
 
     for tranzaction in usd_tranzaction:
@@ -64,6 +86,7 @@ def test_filter_by_currency(test_generators: List[dict]) -> None:
 
 
 def test_transaction_descriptions(test_generators: List[dict]) -> None:
+    """тест генератор, который принимает список словарей и возвращает описание каждой операции по очереди"""
     descriptions = list(generators.transaction_descriptions(test_generators))
 
     for description in descriptions:

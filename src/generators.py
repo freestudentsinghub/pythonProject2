@@ -74,3 +74,16 @@ descriptions: Generator[str, None, None] = transaction_descriptions(transactions
 
 for _ in range(5):
     print(next(descriptions))
+
+
+def card_number_generator(start: int, end: int) -> Generator[str, None, None]:
+    """генератор номеров банковских карт,
+    который должен генерировать номера карт в формате "XXXX XXXX XXXX XXXX",
+    где X — цифра. Должны быть сгенерированы номера карт в заданном диапазоне, например,
+    от 0000 0000 0000 0001 до 9999 9999 9999 9999 (диапазоны передаются как параметры генератора)."""
+    for num in range(start, end + 1):
+        yield "{:04d} {:04d} {:04d} {:04d}".format(0, 0, 0, num)
+
+
+for card_number in card_number_generator(1, 5):
+    print(card_number)
