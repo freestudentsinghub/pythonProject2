@@ -15,7 +15,7 @@ def filter_by_state(data: list, state: str = "EXECUTED") -> list:
 
 def sorted_by_datetime(data: list, order: str = "descending") -> list:
     """Функция, которая принимает на вход список словарей и возвращает новый список,
-     в котором исходные словари отсортированы по убыванию даты (ключ date). """
+    в котором исходные словари отсортированы по убыванию даты (ключ date)."""
     sorted_data = sorted(data, key=lambda x: datetime.fromisoformat(x["date"]), reverse=(order == "descending"))
     return sorted_data
 
