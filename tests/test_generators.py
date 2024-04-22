@@ -56,8 +56,15 @@ def test_generators() -> List[dict]:
     ]
 
 
-def test_test_generators(test_generators: List[dict]) -> None:
+def test_filter_by_currency(test_generators: List[dict]) -> None:
     usd_tranzaction = list(generators.filter_by_currency(test_generators, "USD"))
 
     for tranzaction in usd_tranzaction:
         assert tranzaction["operationAmount"]["currency"]["name"] == "USD"
+
+
+def test_transaction_descriptions(test_generators: List[dict]) -> None:
+    descriptions = list(generators.transaction_descriptions(test_generators))
+
+    for description in descriptions:
+        assert description

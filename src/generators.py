@@ -62,3 +62,15 @@ def filter_by_currency(transactions: List[Dict], name: str) -> Generator[Dict, N
 usd_transactions: Generator[Dict, None, None] = filter_by_currency(transactions, "USD")
 for _ in range(2):
     print(next(usd_transactions)["id"])
+
+
+def transaction_descriptions(transactions: List[dict]) -> Generator[str, None, None]:
+    """генератор, который принимает список словарей и возвращает описание каждой операции по очереди."""
+    for transaction in transactions:
+        yield transaction["description"]
+
+
+descriptions: Generator[str, None, None] = transaction_descriptions(transactions)
+
+for _ in range(5):
+    print(next(descriptions))
