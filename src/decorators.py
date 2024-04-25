@@ -12,8 +12,10 @@ def log(filename: str) -> Callable[[Callable], Callable]:
                 message = f"{datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')} my_function ok\n"
             except Exception as e:
                 result = None
-                message = (f"{datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')} "
-                           f"my_function error:{type(e).__name__} Inputs: {args}, {kwargs}\n")
+                message = (
+                    f"{datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')} "
+                    f"my_function error:{type(e).__name__} Inputs: {args}, {kwargs}\n"
+                )
             if filename:
                 with open(filename, "a") as f:
                     f.write(message)

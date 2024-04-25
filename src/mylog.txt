@@ -1,7 +1,1 @@
-2024-04-24 17-16-11 my_function ok
-2024-04-24 18-02-30 my_function ok
-2024-04-24 18-02-56 my_function TypeError Inputs: (1,), {}
-2024-04-24 18-03-47 my_function error:TypeError Inputs: (2,), {}
-2024-04-24 18-04-04 my_function error:TypeError Inputs: (1, 2), {}
-2024-04-24 18-07-04 my_function error:my_function() takes 1 positional argument but 2 were given Inputs: (1, 2), {}
-2024-04-24 18-10-05 my_function ok
+
