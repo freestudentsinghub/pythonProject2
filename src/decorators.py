@@ -35,6 +35,7 @@ def log(filename: str) -> Callable[[Callable], Callable]:
 
 @log(filename="mylog.txt")
 def my_function(x: int, y: int) -> int:
+    """основная функция считает сумму двух чисел"""
     return x + y
 
 
