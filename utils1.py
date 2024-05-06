@@ -3,7 +3,26 @@ from typing import List
 
 import requests
 
-from main import nwe_list
+
+def transaction(filename: str) -> List[dict]:
+    """"""
+    try:
+        with open(filename, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if isinstance(data, list):
+                return data
+            else:
+                return []
+    except FileNotFoundError:
+        print("file not found")
+        return []
+    except json.JSONDecodeError:
+        print("Wrong format")
+        return []
+
+
+filename = "data/operations.json"
+nwe_list = transaction(filename)
 
 
 def amount_rub(nwe_list: List[dict]) -> List[dict]:
