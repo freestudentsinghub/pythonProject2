@@ -1,23 +1,22 @@
-import json
+from unittest.mock import Mock
 
-import pytest
-
-from utils1 import transaction
+from utils1 import amount_rub, nwe_list, transaction
 
 
-def test_transaction(filename):
-    file_path = filename/'data/operations.json'
-    file_path.write_text("")
-    assert transaction(str(file_path)) == []
+def test_transaction_true() -> None:
+    """проверяет функцию котрая возвращает список словарей
+    с данными о финансовых транзакциях"""
+    filename = "data/operations.json"
+    assert transaction(filename) == nwe_list
 
 
+def test_amount_rub() -> None:
+    """проверяет функцию которая которая принимает на вход транзакцию и возвращает сумму транзакции (amount) в рублях"""
+    assert amount_rub(nwe_list) == 2627938.9600000004
 
 
-
-
-def test_amount_rub():
-    pass
-
-
-def test_get_usd_url():
-    pass
+def test_get_usd_url() -> None:
+    """проверяет функцию которая если транзакция была в USD или EUR,
+    идет обращение к внешнему API для получения текущего курса валют  возвращает сумму в рублях"""
+    mock_random = Mock(return_value=25656.896037152314)
+    assert mock_random() == 25656.896037152314

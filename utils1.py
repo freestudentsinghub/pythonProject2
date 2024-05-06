@@ -16,10 +16,8 @@ def transaction(filename: str) -> List[dict]:
             else:
                 return []
     except FileNotFoundError:
-        print("file not found")
         return []
     except json.JSONDecodeError:
-        print("Wrong format")
         return []
 
 
@@ -37,19 +35,15 @@ def amount_rub(nwe_list: List[dict]) -> Any:
             and amount["operationAmount"]["currency"]["code"] == "RUB"
         ):
             rub_list.append(amount["operationAmount"]["amount"])
-    return rub_list
+    count_rub = sum(float(amount) for amount in rub_list)
+    return count_rub
 
 
 rub_a_l = amount_rub(nwe_list)
 
-count = sum(float(amount) for amount in rub_a_l)
-#print(count)
-
-
-
-def get_usd_url(nwe_list: List[dict]) -> List[float]:
+def get_usd_url(nwe_list: List[dict]) -> Any:
     """Функция которая если транзакция была в USD или EUR,
-    идет обращение к внешнему API для получения текущего курса валют"""
+    идет обращение к внешнему API для получения текущего курса валют  возвращает сумму в рублях"""
     currency_exchange_rate = requests.get("https://v6.exchangerate-api.com/v6/04fed55e4543c3c22311996f/latest/USD")
     data = currency_exchange_rate.json()
     with open("cout.json", "w", encoding="utf-8") as f:
@@ -69,12 +63,11 @@ def get_usd_url(nwe_list: List[dict]) -> List[float]:
             ):
                 rub_to_usd = float(rub["operationAmount"]["amount"]) / get_rub
                 results.append(rub_to_usd)
-    return results
+        count_usd = sum(float(amount) for amount in results)
+    return count_usd
 
 
 results = get_usd_url(nwe_list)
-count_usd = sum(float(amount) for amount in results)
-#print(count_usd)
 
-all_sum = count_usd + count
+all_sum = results + rub_a_l
 print(all_sum)
