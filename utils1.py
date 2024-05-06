@@ -1,5 +1,5 @@
 import json
-from typing import List
+from typing import List, Any
 
 import requests
 
@@ -27,7 +27,7 @@ filename = "data/operations.json"
 nwe_list = transaction(filename)
 
 
-def amount_rub(nwe_list: List[dict]) -> List[dict]:
+def amount_rub(nwe_list: List[dict]) -> Any:
     """функция, которая принимает на вход транзакцию и возвращает сумму транзакции (amount) в рублях"""
     rub_list = []
     for amount in nwe_list:
@@ -41,11 +41,13 @@ def amount_rub(nwe_list: List[dict]) -> List[dict]:
 
 
 rub_a_l = amount_rub(nwe_list)
-for amount in rub_a_l:
-    print(amount)
+
+count = sum(float(amount) for amount in rub_a_l)
+#print(count)
 
 
-def get_usd_url() -> List[float]:
+
+def get_usd_url(nwe_list: List[dict]) -> List[float]:
     """Функция которая если транзакция была в USD или EUR,
     идет обращение к внешнему API для получения текущего курса валют"""
     currency_exchange_rate = requests.get("https://v6.exchangerate-api.com/v6/04fed55e4543c3c22311996f/latest/USD")
@@ -70,6 +72,9 @@ def get_usd_url() -> List[float]:
     return results
 
 
-results = get_usd_url()
-for result in results:
-    print(result)
+results = get_usd_url(nwe_list)
+count_usd = sum(float(amount) for amount in results)
+#print(count_usd)
+
+all_sum = count_usd + count
+print(all_sum)
