@@ -5,7 +5,9 @@ import requests
 
 
 def transaction(filename: str) -> List[dict]:
-    """"""
+    """функция, которая принимает на вход путь до JSON-файла и возвращает список словарей
+    с данными о финансовых транзакциях. Если файл пустой, содержит не список или не найден,
+     функция возвращает пустой список."""
     try:
         with open(filename, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -26,6 +28,7 @@ nwe_list = transaction(filename)
 
 
 def amount_rub(nwe_list: List[dict]) -> List[dict]:
+    """функция, которая принимает на вход транзакцию и возвращает сумму транзакции (amount) в рублях"""
     rub_list = []
     for amount in nwe_list:
         if (
@@ -43,6 +46,8 @@ for amount in rub_a_l:
 
 
 def get_usd_url() -> List[float]:
+    """Функция которая если транзакция была в USD или EUR,
+    идет обращение к внешнему API для получения текущего курса валют"""
     currency_exchange_rate = requests.get("https://v6.exchangerate-api.com/v6/04fed55e4543c3c22311996f/latest/USD")
     data = currency_exchange_rate.json()
     with open("cout.json", "w", encoding="utf-8") as f:
