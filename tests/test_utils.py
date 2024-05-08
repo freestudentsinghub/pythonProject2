@@ -6,7 +6,7 @@ import pytest
 from src.utils import list_of_the_transaction
 
 
-def test_transaction_true() -> List[dict]:
+def test_list_of_the_transaction() -> List[dict]:
     """проверяет функцию котрая возвращает список словарей
     с данными о финансовых транзакциях"""
     return [
@@ -29,7 +29,7 @@ def test_transaction_true() -> List[dict]:
 
 
 @pytest.fixture
-def test_list_of_the_transaction(test_transaction_true: List[dict], filename: str) -> None:
+def test_test_list_of_the_transaction(test_transaction_true: List[dict], filename: str) -> None:
     get_list = list_of_the_transaction(filename)
     assert test_transaction_true in get_list
 
