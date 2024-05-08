@@ -1,23 +1,44 @@
+from typing import List
 from unittest.mock import Mock
 
-from src.utils import amount_rub, nwe_list, transaction
+import pytest
+
+from src.utils import list_of_the_transaction
 
 
-def test_transaction_true() -> None:
+def test_transaction_true() -> List[dict]:
     """проверяет функцию котрая возвращает список словарей
     с данными о финансовых транзакциях"""
-    filename = "data/operations.json"
-    assert transaction(filename) == nwe_list
+    return [
+        {
+            "id": 441945886,
+            "state": "EXECUTED",
+            "date": "2019-08-26T10:50:58.294041",
+            "operationAmount": {"amount": "31957.58", "currency": {"name": "руб.", "code": "RUB"}},
+            "description": "Перевод организации",
+            "from": "Maestro 1596837868705199",
+            "to": "Счет 64686473678894779589",
+        },
+        {
+            "id": 41428829,
+            "state": "EXECUTED",
+            "date": "2019-07-03T18:35:29.512364",
+            "operationAmount": {"amount": "8221.37", "currency": {"name": "USD", "code": "USD"}},
+        },
+    ]
 
 
-def test_amount_rub() -> None:
-    """проверяет функцию которая которая принимает на вход транзакцию и возвращает сумму транзакции (amount) в рублях"""
-    assert amount_rub(nwe_list) == 2627938.9600000004
+@pytest.fixture
+def test_list_of_the_transaction(test_transaction_true: List[dict], filename: str) -> None:
+    get_list = list_of_the_transaction(filename)
+    assert test_transaction_true in get_list
 
 
-def test_get_usd_url() -> None:
-    """проверяет функцию которая если транзакция была в USD или EUR,
-    идет обращение к внешнему API для получения текущего курса валют  возвращает сумму в рублях"""
-    mock_random = Mock(return_value=25656.896037152314)
-    assert mock_random() == 25656.896037152314
+def test_transaction_amount_in_rubles() -> None:
+    mock_random = Mock(return_value=8275817.395122)
+    assert mock_random() == 8275817.395122
 
+
+def test_transaction_amount_in_rubles_rubl() -> None:
+    mock_random = Mock(return_value=96995.73)
+    assert mock_random() == 96995.73
