@@ -1,6 +1,6 @@
 from unittest.mock import Mock
 
-from utils1 import amount_rub, nwe_list, transaction
+from src.utils import amount_rub, nwe_list, transaction
 
 
 def test_transaction_true() -> None:
@@ -20,3 +20,4 @@ def test_get_usd_url() -> None:
     идет обращение к внешнему API для получения текущего курса валют  возвращает сумму в рублях"""
     mock_random = Mock(return_value=25656.896037152314)
     assert mock_random() == 25656.896037152314
+
