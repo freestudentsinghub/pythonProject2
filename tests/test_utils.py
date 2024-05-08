@@ -29,9 +29,9 @@ def test_list_of_the_transaction() -> List[dict]:
 
 
 @pytest.fixture
-def test_test_list_of_the_transaction(test_transaction_true: List[dict], filename: str) -> None:
+def test_test_list_of_the_transaction(test_list_of_the_transaction: List[dict], filename: str) -> None:
     get_list = list_of_the_transaction(filename)
-    assert test_transaction_true in get_list
+    assert test_list_of_the_transaction in get_list
 
 
 def test_transaction_amount_in_rubles() -> None:
