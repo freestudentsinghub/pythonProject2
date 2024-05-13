@@ -38,21 +38,12 @@ def transaction_amount_in_rubles(transactions: Dict) -> Any:
             f"https://v6.exchangerate-api.com/v6/04fed55e4543c3c22311996f/latest/{code}"
         )
         data = currency_exchange_rate.json()
+        conversion_rates = data.get("conversion_rates")
+        if conversion_rates and "RUB" in conversion_rates:
+            exchange_rate = conversion_rates["RUB"]
+            amount_in_rubles = float(transactions["operationAmount"]["amount"]) * exchange_rate
+            return amount_in_rubles
 
-        with open("../currency.json", "w", encoding="utf-8") as f:
-            json.dump(data, f)
-
-        with open("../currency.json", "r", encoding="utf-8") as f:
-            read_text = json.load(f)
-
-            for currency, rates in read_text["conversion_rates"].items():
-                if currency == "RUB":
-                    get_rub = float(rates)
-
-            if transactions["operationAmount"]["currency"]["code"] == "USD":
-                rub_to_usd = float(transactions["operationAmount"]["amount"]) * get_rub
-
-    return rub_to_usd
 
 
 print(nwe_list)
