@@ -1,5 +1,5 @@
 import json
-from typing import List, Any
+from typing import List, Any, Dict
 
 import requests
 
@@ -25,36 +25,33 @@ filename = "../data/operations.json"
 nwe_list = list_of_the_transaction(filename)
 
 
-def transaction_amount_in_rubles(transactions: List[dict]) -> Any:
+def transaction_amount_in_rubles(transactions: Dict) -> Any:
     """функция, которая принимает на вход транзакцию и возвращает сумму транзакции (amount) в рублях,
     возвращает тип float. Если транзакция была в USD или EUR,
     идет обращение к внешнему API для получения текущего курса валют и конвертации суммы операции в рубли."""
-    for amount in transactions:
-        if amount["operationAmount"]["currency"]["code"] == "RUB":
-            code_rub = amount["operationAmount"]["amount"]
-            return code_rub
+    if transactions["operationAmount"]["currency"]["code"] == "RUB":
+         return transactions["operationAmount"]["amount"]
+    elif transactions["operationAmount"]["currency"]["code"] != "RUB":
+        code = transactions["operationAmount"]["currency"]["code"]
 
-        elif amount["operationAmount"]["currency"]["code"] != "RUB":
-            code = amount["operationAmount"]["currency"]["code"]
-
-            currency_exchange_rate = requests.get(
+        currency_exchange_rate = requests.get(
                 f"https://v6.exchangerate-api.com/v6/04fed55e4543c3c22311996f/latest/{code}"
-            )
-            data = currency_exchange_rate.json()
+        )
+        data = currency_exchange_rate.json()
 
-            with open("../currency.json", "w", encoding="utf-8") as f:
-                json.dump(data, f)
+        with open("../currency.json", "w", encoding="utf-8") as f:
+            json.dump(data, f)
 
-            with open("../currency.json", "r", encoding="utf-8") as f:
-                read_text = json.load(f)
+        with open("../currency.json", "r", encoding="utf-8") as f:
+            read_text = json.load(f)
 
-                for currency, rates in read_text["conversion_rates"].items():
-                    if currency == "RUB":
-                        get_rub = float(rates)
+            for currency, rates in read_text["conversion_rates"].items():
+                 if currency == "RUB":
+                    get_rub = float(rates)
 
-                for rub in transactions:
-                    if rub["operationAmount"]["currency"]["code"] == "USD":
-                        rub_to_usd = float(rub["operationAmount"]["amount"]) * get_rub
+
+            if transactions["operationAmount"]["currency"]["code"] == "USD":
+                rub_to_usd = float(transactions["operationAmount"]["amount"]) * get_rub
 
     return rub_to_usd
 
@@ -62,26 +59,27 @@ def transaction_amount_in_rubles(transactions: List[dict]) -> Any:
 print(nwe_list)
 print(
     transaction_amount_in_rubles(
-        [
+
             {
                 "id": 542678139,
                 "state": "EXECUTED",
                 "date": "2018-10-14T22:27:25.205631",
                 "operationAmount": {"amount": "90582.51", "currency": {"name": "USD", "code": "USD"}},
             }
-        ]
+
     )
 )
 
 print(
     transaction_amount_in_rubles(
-        [
+
             {
                 "id": 649467725,
                 "state": "EXECUTED",
                 "date": "2018-04-14T19:35:28.978265",
                 "operationAmount": {"amount": "96995.73", "currency": {"name": "руб.", "code": "RUB"}},
             }
-        ]
+
     )
 )
+
