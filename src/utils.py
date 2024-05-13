@@ -45,7 +45,6 @@ def transaction_amount_in_rubles(transactions: Dict) -> Any:
             return amount_in_rubles
 
 
-
 print(nwe_list)
 print(
     transaction_amount_in_rubles(
