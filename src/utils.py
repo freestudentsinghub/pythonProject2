@@ -1,5 +1,5 @@
 import json
-from typing import List, Any, Dict
+from typing import Any, Dict, List
 
 import requests
 
@@ -30,12 +30,12 @@ def transaction_amount_in_rubles(transactions: Dict) -> Any:
     возвращает тип float. Если транзакция была в USD или EUR,
     идет обращение к внешнему API для получения текущего курса валют и конвертации суммы операции в рубли."""
     if transactions["operationAmount"]["currency"]["code"] == "RUB":
-         return transactions["operationAmount"]["amount"]
+        return transactions["operationAmount"]["amount"]
     elif transactions["operationAmount"]["currency"]["code"] != "RUB":
         code = transactions["operationAmount"]["currency"]["code"]
 
         currency_exchange_rate = requests.get(
-                f"https://v6.exchangerate-api.com/v6/04fed55e4543c3c22311996f/latest/{code}"
+            f"https://v6.exchangerate-api.com/v6/04fed55e4543c3c22311996f/latest/{code}"
         )
         data = currency_exchange_rate.json()
 
@@ -46,9 +46,8 @@ def transaction_amount_in_rubles(transactions: Dict) -> Any:
             read_text = json.load(f)
 
             for currency, rates in read_text["conversion_rates"].items():
-                 if currency == "RUB":
+                if currency == "RUB":
                     get_rub = float(rates)
-
 
             if transactions["operationAmount"]["currency"]["code"] == "USD":
                 rub_to_usd = float(transactions["operationAmount"]["amount"]) * get_rub
@@ -59,27 +58,22 @@ def transaction_amount_in_rubles(transactions: Dict) -> Any:
 print(nwe_list)
 print(
     transaction_amount_in_rubles(
-
-            {
-                "id": 542678139,
-                "state": "EXECUTED",
-                "date": "2018-10-14T22:27:25.205631",
-                "operationAmount": {"amount": "90582.51", "currency": {"name": "USD", "code": "USD"}},
-            }
-
+        {
+            "id": 542678139,
+            "state": "EXECUTED",
+            "date": "2018-10-14T22:27:25.205631",
+            "operationAmount": {"amount": "90582.51", "currency": {"name": "USD", "code": "USD"}},
+        }
     )
 )
 
 print(
     transaction_amount_in_rubles(
-
-            {
-                "id": 649467725,
-                "state": "EXECUTED",
-                "date": "2018-04-14T19:35:28.978265",
-                "operationAmount": {"amount": "96995.73", "currency": {"name": "руб.", "code": "RUB"}},
-            }
-
+        {
+            "id": 649467725,
+            "state": "EXECUTED",
+            "date": "2018-04-14T19:35:28.978265",
+            "operationAmount": {"amount": "96995.73", "currency": {"name": "руб.", "code": "RUB"}},
+        }
     )
 )
-
