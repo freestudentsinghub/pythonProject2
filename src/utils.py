@@ -1,31 +1,33 @@
 import json
-
 from typing import Any, Dict, List
-from src.logger import setup_logger
+
 import requests
 
+from src.logger import setup_logger
 
-logger = setup_logger('utils', 'utils.log')
+# вызов логера
+logger = setup_logger("utils", "utils.log")
+
 
 def list_of_the_transaction(filename: str) -> List[dict]:
     """функция, которая принимает на вход путь до JSON-файла и возвращает список словарей
     с данными о финансовых транзакциях. Если файл пустой, содержит не список или не найден,
      функция возвращает пустой список."""
-    logger.info(f'check filename {filename}')
+    logger.info(f"check filename {filename}")
     try:
         with open(filename, "r", encoding="utf-8") as f:
             data = json.load(f)
             if isinstance(data, list):
-                logger.info('file correct')
+                logger.info("file correct")
                 return data
             else:
-                logger.info('file not correct')
+                logger.info("file not correct")
                 return []
     except FileNotFoundError:
-        logger.info('file not correct')
+        logger.info("file not correct")
         return []
     except json.JSONDecodeError:
-        logger.info('file not correct')
+        logger.info("file not correct")
         return []
 
 
@@ -33,17 +35,16 @@ filename = "../data/operations.json"
 nwe_list = list_of_the_transaction(filename)
 
 
-
 def transaction_amount_in_rubles(transactions: Dict) -> Any:
     """функция, которая принимает на вход транзакцию и возвращает сумму транзакции (amount) в рублях,
     возвращает тип float. Если транзакция была в USD или EUR,
     идет обращение к внешнему API для получения текущего курса валют и конвертации суммы операции в рубли."""
-    logger.info('start transaction_amount_in_rubles')
+    logger.info("start transaction_amount_in_rubles")
     if transactions["operationAmount"]["currency"]["code"] == "RUB":
         logger.info(f'result in RUB {transactions["operationAmount"]["amount"]}')
         return transactions["operationAmount"]["amount"]
     elif transactions["operationAmount"]["currency"]["code"] != "RUB":
-        logger.info('get APL code USD or EUR')
+        logger.info("get APL code USD or EUR")
         code = transactions["operationAmount"]["currency"]["code"]
 
         currency_exchange_rate = requests.get(
@@ -54,10 +55,8 @@ def transaction_amount_in_rubles(transactions: Dict) -> Any:
         if conversion_rates and "RUB" in conversion_rates:
             exchange_rate = conversion_rates["RUB"]
             amount_in_rubles = float(transactions["operationAmount"]["amount"]) * exchange_rate
-            logger.info(f'result in EUR or USD {amount_in_rubles}')
+            logger.info(f"result in EUR or USD {amount_in_rubles}")
             return amount_in_rubles
-
-
 
 
 print(nwe_list)
