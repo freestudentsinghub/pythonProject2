@@ -1,0 +1,21 @@
+2024-05-20 12:06:12,864 utils.py INFO: check filename
+2024-05-20 12:06:12,864 utils.py INFO: file correct
+2024-05-20 12:06:12,867 utils.py INFO: start transaction_amount_in_rubles
+2024-05-20 12:06:12,867 utils.py INFO: get APL code USD or EUR
+2024-05-20 12:06:13,214 utils.py INFO: result in EUR or USD 8242220.342162999
+2024-05-20 12:06:13,216 utils.py INFO: start transaction_amount_in_rubles
+2024-05-20 12:06:13,216 utils.py INFO: result in RUB 96995.73
+2024-05-20 12:12:18,709 utils.py INFO: check filename ../data/operations.json
+2024-05-20 12:12:18,710 utils.py INFO: file correct
+2024-05-20 12:12:18,712 utils.py INFO: start transaction_amount_in_rubles
+2024-05-20 12:12:18,712 utils.py INFO: get APL code USD or EUR
+2024-05-20 12:12:19,085 utils.py INFO: result in EUR or USD 8242220.342162999
+2024-05-20 12:12:19,087 utils.py INFO: start transaction_amount_in_rubles
+2024-05-20 12:12:19,087 utils.py INFO: result in RUB 96995.73
+2024-05-20 14:54:26,357 utils.py INFO: check filename ../data/operations.json
+2024-05-20 14:54:26,365 utils.py INFO: file correct
+2024-05-20 14:54:26,370 utils.py INFO: start transaction_amount_in_rubles
+2024-05-20 14:54:26,370 utils.py INFO: get APL code USD or EUR
+2024-05-20 14:54:26,600 utils.py INFO: result in EUR or USD 8242220.342162999
+2024-05-20 14:54:26,601 utils.py INFO: start transaction_amount_in_rubles
+2024-05-20 14:54:26,601 utils.py INFO: result in RUB 96995.73

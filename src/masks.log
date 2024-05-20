@@ -1,0 +1,8 @@
+2024-05-20 12:07:12,953 masks.py INFO: start mask_card
+2024-05-20 12:07:12,953 masks.py INFO: mask 1234 56** **** 7890
+2024-05-20 12:07:12,954 masks.py INFO: start mask_account
+2024-05-20 12:07:12,954 masks.py INFO: mask **7890
+2024-05-20 12:12:28,013 masks.py INFO: start mask_card 1234567890
+2024-05-20 12:12:28,013 masks.py INFO: mask 1234 56** **** 7890
+2024-05-20 12:12:28,013 masks.py INFO: start mask_account 12534567890
+2024-05-20 12:12:28,013 masks.py INFO: mask **7890

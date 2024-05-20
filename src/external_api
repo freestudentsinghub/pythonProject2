@@ -1,0 +1,23 @@
+
+2024-05-20 11:09:30,933 utils.py INFO: check filename
+2024-05-20 11:09:30,933 utils.py INFO: file correct
+2024-05-20 11:09:30,938 utils.py INFO: start transaction_amount_in_rubles
+2024-05-20 11:09:30,938 utils.py INFO: get APL code USD or EUR
+2024-05-20 11:09:31,215 utils.py INFO: end if code EUR or USD
+2024-05-20 11:09:31,217 utils.py INFO: start transaction_amount_in_rubles
+2024-05-20 11:09:31,217 utils.py INFO: code == RUB
+2024-05-20 11:12:37,601 masks.py INFO: start mask_card
+2024-05-20 11:12:37,601 masks.py INFO: mask ['1', '2', '3', '4', ' ', '5', '6', '** ****', ' ', '7', '8', '9', '0']
+2024-05-20 11:12:37,601 masks.py INFO: start mask_account
+2024-05-20 11:12:37,601 masks.py INFO: mask ['**', '7', '8', '9', '0']
+2024-05-20 11:13:11,547 masks.py INFO: start mask_card
+2024-05-20 11:13:11,547 masks.py INFO: mask 1234 56** **** 7890
+2024-05-20 11:13:11,547 masks.py INFO: start mask_account
+2024-05-20 11:13:11,547 masks.py INFO: mask **7890
+2024-05-20 11:56:22,912 utils.py INFO: check filename
+2024-05-20 11:56:22,913 utils.py INFO: file correct
+2024-05-20 11:56:22,916 utils.py INFO: start transaction_amount_in_rubles
+2024-05-20 11:56:22,916 utils.py INFO: get APL code USD or EUR
+2024-05-20 11:56:23,234 utils.py INFO: result in EUR or USD 8242220.342162999
+2024-05-20 11:56:23,236 utils.py INFO: start transaction_amount_in_rubles
+2024-05-20 11:56:23,236 utils.py INFO: result in RUB 96995.73
