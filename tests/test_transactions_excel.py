@@ -1,13 +1,12 @@
 import os
-import os.path
-from unittest.mock import Mock, patch
+from unittest.mock import mock_open, patch, Mock
 
 from pandas import DataFrame
 
 from src.transactions_excel import read_excel
 
 
-@patch("pandas.read_excel")
+@patch('pandas.read_excel')
 def test_read_excel(mock_open: Mock) -> None:
     mock_open.return_value = DataFrame(
         {
