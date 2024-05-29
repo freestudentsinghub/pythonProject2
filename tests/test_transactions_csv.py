@@ -11,6 +11,7 @@ mock_csv_file = mock_open(read_data=csv_data)
 
 @patch("builtins.open", mock_csv_file)
 def test_read_csv() -> None:
+    """тест для функции которая считывает финансовые операции с файла csv"""
     rows = []
     with open("../data/transactions.csv") as csv_file:
         for row in csv.reader(csv_file):

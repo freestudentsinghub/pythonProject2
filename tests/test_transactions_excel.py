@@ -1,13 +1,15 @@
 import os
-from unittest.mock import mock_open, patch, Mock
+from unittest.mock import Mock, patch
 
 from pandas import DataFrame
 
 from src.transactions_excel import read_excel
 
 
-@patch('pandas.read_excel')
+@patch("pandas.read_excel")
 def test_read_excel(mock_open: Mock) -> None:
+    """тест для функции которая считывает финансовые операции с файла excel"""
+
     mock_open.return_value = DataFrame(
         {
             "id": [650703.0],
@@ -21,8 +23,7 @@ def test_read_excel(mock_open: Mock) -> None:
             "description": ["Перевод организации"],
         }
     )
-
-    assert read_excel(os.path.join("../data/transactions_excel.xlsx")) == [
+    assert read_excel(os.path.join("data/transactions_excel.xlsx")) == [
         {
             "id": 650703.0,
             "state": "EXECUTED",
