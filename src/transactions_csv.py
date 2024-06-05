@@ -9,4 +9,4 @@ def read_csv(filename: str) -> list[Any]:
     return csv_file.to_dict(orient="records")
 
 
-print(read_csv("../data/transactions.csv"))
+# print(read_csv("../data/transactions.csv"))

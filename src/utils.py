@@ -32,7 +32,7 @@ def list_of_the_transaction(filename: str) -> List[dict]:
 
 
 filename = "../data/operations.json"
-nwe_list = list_of_the_transaction(filename)
+#nwe_list = list_of_the_transaction(filename)
 
 
 def transaction_amount_in_rubles(transactions: Dict) -> Any:

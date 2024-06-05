@@ -1,4 +1,5 @@
-
+from src.processing import filter_by_state
+from src.utils import list_of_the_transaction
 def main_functionality():
     print("Программа: Привет! Добро пожаловать в программу работы с банковскими транзакициями.\n "
           "Выберите необходимый пункт меню:\n"
@@ -13,7 +14,8 @@ def main_functionality():
         while True:
             status = input().upper()
             if status in ['EXECUTED', 'CANCELED', 'PENDING']:
-                return status
+                list_status = filter_by_state(list_of_the_transaction(filename="../data/operations.json"), status)
+                return list_status
             else:
                 print(f'Статус операции "{status}" недоступен.')
 
