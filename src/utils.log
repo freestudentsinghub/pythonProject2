@@ -19,3 +19,148 @@
 2024-05-20 14:54:26,600 utils.py INFO: result in EUR or USD 8242220.342162999
 2024-05-20 14:54:26,601 utils.py INFO: start transaction_amount_in_rubles
 2024-05-20 14:54:26,601 utils.py INFO: result in RUB 96995.73
+2024-06-04 12:18:53,648 utils.py INFO: check filename ../data/operations.json
+2024-06-04 12:18:53,655 utils.py INFO: file correct
+2024-06-04 12:18:53,660 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 12:18:53,660 utils.py INFO: get APL code USD or EUR
+2024-06-04 12:18:54,057 utils.py INFO: result in EUR or USD 8091029.0747219995
+2024-06-04 12:18:54,060 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 12:18:54,061 utils.py INFO: result in RUB 96995.73
+2024-06-04 13:20:45,710 utils.py INFO: check filename ../data/operations.json
+2024-06-04 13:20:45,716 utils.py INFO: file correct
+2024-06-04 13:20:45,720 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 13:20:45,720 utils.py INFO: get APL code USD or EUR
+2024-06-04 13:20:46,086 utils.py INFO: result in EUR or USD 8091029.0747219995
+2024-06-04 13:20:46,087 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 13:20:46,087 utils.py INFO: result in RUB 96995.73
+2024-06-04 13:21:10,687 utils.py INFO: check filename ../data/operations.json
+2024-06-04 13:21:10,688 utils.py INFO: file correct
+2024-06-04 13:21:10,690 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 13:21:10,690 utils.py INFO: get APL code USD or EUR
+2024-06-04 13:21:10,968 utils.py INFO: result in EUR or USD 8091029.0747219995
+2024-06-04 13:21:10,970 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 13:21:10,970 utils.py INFO: result in RUB 96995.73
+2024-06-04 14:09:23,435 utils.py INFO: check filename ../data/operations.json
+2024-06-04 14:09:23,435 utils.py INFO: file correct
+2024-06-04 14:09:23,441 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 14:09:23,441 utils.py INFO: get APL code USD or EUR
+2024-06-04 14:09:23,774 utils.py INFO: result in EUR or USD 8091029.0747219995
+2024-06-04 14:09:23,777 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 14:09:23,777 utils.py INFO: result in RUB 96995.73
+2024-06-04 14:09:37,717 utils.py INFO: check filename ../data/operations.json
+2024-06-04 14:09:37,718 utils.py INFO: file correct
+2024-06-04 14:09:37,723 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 14:09:37,723 utils.py INFO: get APL code USD or EUR
+2024-06-04 14:09:38,011 utils.py INFO: result in EUR or USD 8091029.0747219995
+2024-06-04 14:09:38,013 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 14:09:38,013 utils.py INFO: result in RUB 96995.73
+2024-06-04 14:09:47,004 utils.py INFO: check filename ../data/operations.json
+2024-06-04 14:09:47,005 utils.py INFO: file correct
+2024-06-04 14:09:47,008 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 14:09:47,008 utils.py INFO: get APL code USD or EUR
+2024-06-04 14:09:47,283 utils.py INFO: result in EUR or USD 8091029.0747219995
+2024-06-04 14:09:47,284 utils.py INFO: start transaction_amount_in_rubles
+2024-06-04 14:09:47,284 utils.py INFO: result in RUB 96995.73
+2024-06-04 14:09:58,366 utils.py INFO: check filename ../data/operations.json
+2024-06-04 14:09:58,367 utils.py INFO: file correct
+2024-06-05 10:37:28,607 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:37:28,614 utils.py INFO: file correct
+2024-06-05 10:37:28,619 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:37:28,619 utils.py INFO: get APL code USD or EUR
+2024-06-05 10:37:29,015 utils.py INFO: result in EUR or USD 8050864.789787999
+2024-06-05 10:37:29,018 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:37:29,018 utils.py INFO: result in RUB 96995.73
+2024-06-05 10:38:06,206 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:38:06,206 utils.py INFO: file correct
+2024-06-05 10:38:06,212 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:38:06,212 utils.py INFO: get APL code USD or EUR
+2024-06-05 10:38:06,479 utils.py INFO: result in EUR or USD 8050864.789787999
+2024-06-05 10:38:06,482 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:38:06,482 utils.py INFO: result in RUB 96995.73
+2024-06-05 10:38:06,482 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:38:06,484 utils.py INFO: file correct
+2024-06-05 10:44:29,011 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:44:29,011 utils.py INFO: file correct
+2024-06-05 10:44:29,018 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:44:29,018 utils.py INFO: get APL code USD or EUR
+2024-06-05 10:44:29,305 utils.py INFO: result in EUR or USD 8050864.789787999
+2024-06-05 10:44:29,307 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:44:29,308 utils.py INFO: result in RUB 96995.73
+2024-06-05 10:44:29,308 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:44:29,309 utils.py INFO: file correct
+2024-06-05 10:44:53,532 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:44:53,533 utils.py INFO: file correct
+2024-06-05 10:44:53,537 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:44:53,537 utils.py INFO: get APL code USD or EUR
+2024-06-05 10:44:53,786 utils.py INFO: result in EUR or USD 8050864.789787999
+2024-06-05 10:44:53,787 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:44:53,787 utils.py INFO: result in RUB 96995.73
+2024-06-05 10:44:53,787 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:44:53,787 utils.py INFO: file correct
+2024-06-05 10:45:33,290 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:45:33,291 utils.py INFO: file correct
+2024-06-05 10:45:33,293 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:45:33,293 utils.py INFO: get APL code USD or EUR
+2024-06-05 10:45:33,531 utils.py INFO: result in EUR or USD 8050864.789787999
+2024-06-05 10:45:33,532 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:45:33,532 utils.py INFO: result in RUB 96995.73
+2024-06-05 10:45:33,532 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:45:33,532 utils.py INFO: file correct
+2024-06-05 10:46:01,608 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:46:01,609 utils.py INFO: file correct
+2024-06-05 10:46:01,613 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:46:01,613 utils.py INFO: get APL code USD or EUR
+2024-06-05 10:46:01,821 utils.py INFO: result in EUR or USD 8050864.789787999
+2024-06-05 10:46:01,822 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:46:01,822 utils.py INFO: result in RUB 96995.73
+2024-06-05 10:46:01,822 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:46:01,823 utils.py INFO: file correct
+2024-06-05 10:46:27,424 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:46:27,424 utils.py INFO: file correct
+2024-06-05 10:46:27,427 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:46:27,427 utils.py INFO: get APL code USD or EUR
+2024-06-05 10:46:27,677 utils.py INFO: result in EUR or USD 8050864.789787999
+2024-06-05 10:46:27,680 utils.py INFO: start transaction_amount_in_rubles
+2024-06-05 10:46:27,681 utils.py INFO: result in RUB 96995.73
+2024-06-05 10:46:27,681 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:46:27,682 utils.py INFO: file correct
+2024-06-05 10:47:47,825 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:47:47,826 utils.py INFO: file correct
+2024-06-05 10:47:47,826 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:47:47,826 utils.py INFO: file correct
+2024-06-05 10:48:46,463 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:48:46,463 utils.py INFO: file correct
+2024-06-05 10:48:46,463 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:48:46,464 utils.py INFO: file correct
+2024-06-05 10:50:31,775 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:50:31,775 utils.py INFO: file correct
+2024-06-05 10:50:31,775 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:50:31,775 utils.py INFO: file correct
+2024-06-05 10:53:36,050 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:53:36,051 utils.py INFO: file correct
+2024-06-05 10:53:36,051 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:53:36,051 utils.py INFO: file correct
+2024-06-05 10:56:06,296 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:56:06,297 utils.py INFO: file correct
+2024-06-05 10:56:06,297 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:56:06,297 utils.py INFO: file correct
+2024-06-05 10:56:31,618 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:56:31,618 utils.py INFO: file correct
+2024-06-05 10:56:31,618 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:56:31,619 utils.py INFO: file correct
+2024-06-05 10:57:15,112 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:57:15,113 utils.py INFO: file correct
+2024-06-05 10:57:15,113 utils.py INFO: check filename ../data/operations.json
+2024-06-05 10:57:15,113 utils.py INFO: file correct
+2024-06-05 11:05:26,641 utils.py INFO: check filename ../data/operations.json
+2024-06-05 11:05:26,641 utils.py INFO: file correct
+2024-06-05 11:05:26,641 utils.py INFO: check filename ../data/operations.json
+2024-06-05 11:05:26,642 utils.py INFO: file correct
+2024-06-05 11:08:40,504 utils.py INFO: check filename ../data/operations.json
+2024-06-05 11:08:40,505 utils.py INFO: file correct
+2024-06-05 11:08:40,505 utils.py INFO: check filename ../data/operations.json
+2024-06-05 11:08:40,505 utils.py INFO: file correct
+2024-06-05 11:28:41,060 utils.py INFO: check filename ../data/operations.json
+2024-06-05 11:28:41,060 utils.py INFO: file correct
+2024-06-05 11:28:41,060 utils.py INFO: check filename ../data/operations.json
+2024-06-05 11:28:41,061 utils.py INFO: file correct

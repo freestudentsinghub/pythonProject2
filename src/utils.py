@@ -59,25 +59,25 @@ def transaction_amount_in_rubles(transactions: Dict) -> Any:
             return amount_in_rubles
 
 
-print(nwe_list)
-print(
-    transaction_amount_in_rubles(
-        {
-            "id": 542678139,
-            "state": "EXECUTED",
-            "date": "2018-10-14T22:27:25.205631",
-            "operationAmount": {"amount": "90582.51", "currency": {"name": "USD", "code": "USD"}},
-        }
-    )
-)
+# print(nwe_list)
+# print(
+#     transaction_amount_in_rubles(
+#         {
+#             "id": 542678139,
+#             "state": "EXECUTED",
+#             "date": "2018-10-14T22:27:25.205631",
+#             "operationAmount": {"amount": "90582.51", "currency": {"name": "USD", "code": "USD"}},
+#         }
+#     )
+# )
 
-print(
-    transaction_amount_in_rubles(
-        {
-            "id": 649467725,
-            "state": "EXECUTED",
-            "date": "2018-04-14T19:35:28.978265",
-            "operationAmount": {"amount": "96995.73", "currency": {"name": "руб.", "code": "RUB"}},
-        }
-    )
-)
+# print(
+#     transaction_amount_in_rubles(
+#         {
+#             "id": 649467725,
+#             "state": "EXECUTED",
+#             "date": "2018-04-14T19:35:28.978265",
+#             "operationAmount": {"amount": "96995.73", "currency": {"name": "руб.", "code": "RUB"}},
+#         }
+#     )
+# )
