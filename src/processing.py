@@ -13,10 +13,10 @@ def filter_by_state(data: list, state: str = "EXECUTED") -> list:
     return function_output
 
 
-def sorted_by_datetime(data: list[dict], order: str = "descending") -> list:
+def sorted_by_datetime(data: list[dict], reverse: bool = True) -> list:
     """Функция, которая принимает на вход список словарей и возвращает новый список,
     в котором исходные словари отсортированы по убыванию даты (ключ date)."""
-    sorted_data = sorted(data, key=lambda x: datetime.fromisoformat(x["date"]), reverse=(order == "descending"))
+    sorted_data = sorted(data, key=lambda x: x["date"], reverse=True)
     return sorted_data
 
 #
