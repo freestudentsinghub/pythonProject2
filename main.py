@@ -9,6 +9,7 @@ from src.widget import mask_kard_and_mask_account
 def main() -> None:
 
 
+
     print(
         "Программа: Привет! Добро пожаловать в программу работы с банковскими транзакициями.\n "
         "Выберите необходимый пункт меню:\n"
@@ -54,25 +55,26 @@ def main() -> None:
             print("Выводить только рублевые тразакции? Да/Нет")
             user_input_rub = input()
             if user_input_rub == "Да":
-                list_transaction = []
+                list_currency = []
 
                 for i in list_transaction:
                     if "currency_code" in i.keys():
                         if i["currency_code"] == "RUB":
-                            list_transaction.append(i)
+                            list_currency.append(i)
                     else:
                         if i["operationAmount"]["currency"]["code"] == "RUB":
-                            list_transaction.append(i)
-
+                            list_currency.append(i)
+            else:
+                list_currency = list_transaction
             print("Отфильтровать список транзакций по определенному слову в описании? Да/Нет")
             user_input_word = input()
             if user_input_word == "Да":
-                last_transaction = transactions_re(list_transaction, pattern="Перевод организации")
+                list_currency = transactions_re(list_transaction, pattern="Перевод организации")
 
             print("Распечатываю итоговый список транзакций...")
-            if len(last_transaction) != 0:
-                print(f"Всего банковских операций в выборке: {len(last_transaction)}")
-                for i in list_transaction:
+            if len(list_currency) != 0:
+                print(f"Всего банковских операций в выборке: {len(list_currency)}")
+                for i in list_currency:
                     date = i["date"]
                     description = i["description"]
                     account_from = str(i.get("from", "without_from"))
