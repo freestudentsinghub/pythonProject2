@@ -8,7 +8,7 @@ from src.widget import mask_kard_and_mask_account
 
 def main() -> None:
 
-    global list_transaction, last_transaction
+
     print(
         "Программа: Привет! Добро пожаловать в программу работы с банковскими транзакициями.\n "
         "Выберите необходимый пункт меню:\n"
@@ -39,7 +39,7 @@ def main() -> None:
     while True:
         if status in ["EXECUTED", "CANCELED", "PENDING"]:
             print(f'Операции отфильтрованы по статусу "{status}"')
-            list_transactions = filter_by_state(data, status)
+            list_transaction = filter_by_state(data, status)
             print("Отсортировать операции по дате? Да/Нет")
             user_input_data = input()
 
@@ -47,16 +47,16 @@ def main() -> None:
                 print("Отсортировать по возрастанию или по убыванию?")
                 user_input_ascending = input()
                 if user_input_ascending == "по возрастанию":
-                    list_transactions = sorted_by_datetime(list_transactions, True)
+                    list_transaction = sorted_by_datetime(list_transaction, True)
                 else:
-                    list_transactions = sorted_by_datetime(list_transactions, False)
+                    list_transaction = sorted_by_datetime(list_transaction, False)
 
             print("Выводить только рублевые тразакции? Да/Нет")
             user_input_rub = input()
             if user_input_rub == "Да":
                 list_transaction = []
 
-                for i in list_transactions:
+                for i in list_transaction:
                     if "currency_code" in i.keys():
                         if i["currency_code"] == "RUB":
                             list_transaction.append(i)
