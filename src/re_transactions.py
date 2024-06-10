@@ -54,4 +54,4 @@ def transactions_re(transactions: List[dict], pattern: str) -> List[dict]:
     return matches
 
 
-print(transactions_re(transactions, pattern))
+# print(transactions_re(transactions, pattern))

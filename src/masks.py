@@ -14,7 +14,7 @@ def mask_card(card_number: str) -> str:
     return "".join(mask_card)
 
 
-print(mask_card("1234567890"))
+# print(mask_card("1234567890"))
 
 
 def mask_account(card_number: str) -> str:
@@ -26,4 +26,4 @@ def mask_account(card_number: str) -> str:
     return "".join(mask_card)
 
 
-print(mask_account("12534567890"))
+# print(mask_account("12534567890"))

@@ -22,9 +22,9 @@ def data_mask(data_number: str) -> str:
     return "".join(number_data)
 
 
-print(mask_kard_and_mask_account("Счет 35383033474447895560"))
-print(mask_kard_and_mask_account("Maestro 1596837868705199"))
-print(data_mask("2018-07-11T02:26:18.671407"))
-print(mask_kard_and_mask_account("Visa Platinum 8990922113665229"))
-print(mask_kard_and_mask_account("Visa Gold 5999414228426353"))
-print(mask_kard_and_mask_account("Visa Classic 6831982476737658"))
+# print(mask_kard_and_mask_account("Счет 35383033474447895560"))
+# print(mask_kard_and_mask_account("Maestro 1596837868705199"))
+# print(data_mask("2018-07-11T02:26:18.671407"))
+# print(mask_kard_and_mask_account("Visa Platinum 8990922113665229"))
+# print(mask_kard_and_mask_account("Visa Gold 5999414228426353"))
+# print(mask_kard_and_mask_account("Visa Classic 6831982476737658"))
